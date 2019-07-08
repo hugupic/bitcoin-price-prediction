@@ -5,7 +5,8 @@ for predicting price variation of Bitcoin. You can read more about the method
 at https://arxiv.org/pdf/1410.1231.pdf.
 """
 import numpy as np
-import bigfloat as bg
+#import bigfloat as bg
+import gmpy2 as gp
 from numpy.linalg import norm
 from sklearn import linear_model
 from sklearn.cluster import KMeans
@@ -69,7 +70,7 @@ def predict_dpi(x, s):
     for i in range(len(s)):
         y_i = s[i, len(x)]
         x_i = s[i, :len(x)]
-        exp = bg.exp(-0.25 * norm(x - x_i) ** 2)
+        exp = gp.exp(-0.25 * norm(x - x_i) ** 2)
         num += y_i * exp
         den += exp
     return num / den
