@@ -15,7 +15,7 @@ Make sure you have installed all the requirements and [created an isolated Pytho
 ```sh
     $ git clone https://github.com/hugupic/bitcoin-price-prediction.git
     $ cd bitcoin-price-prediction
-    $ pip install -e .
+    $ pip install -e ./
 ```
 
 ## Usage
